@@ -1,7 +1,7 @@
 import requests
 from bs4 import BeautifulSoup
 
-def get_site_text(url):
+def get_site_text(url, word):
     '''
     Get the text from a website
 
@@ -27,13 +27,19 @@ def get_site_text(url):
     # Get the text
     text = soup.get_text()
 
-    return text
+    # Count the number of times the word appears
+    count = text.count(word)
 
-#User inputted URL
+    return count
+
+# User inputted URL
 url = input('Enter a website to scrape: ')
 
 # Preprocess the URL
 if not url.startswith('http'):
     url = 'http://' + url
 
-print(get_site_text(url))
+# User inputted word
+word = input('Enter a word to count: ')
+
+print(get_site_text(url, word))
