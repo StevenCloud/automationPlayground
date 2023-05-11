@@ -27,6 +27,8 @@ def get_site_text(url):
     # Get the text
     text = soup.get_text()
 
+    
+
     return text
 
 #User inputted URL
