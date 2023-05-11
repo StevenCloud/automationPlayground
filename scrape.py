@@ -29,4 +29,5 @@ def get_site_text(url):
 
     return text
 
-print(get_site_text('https://www.python.org/'))
+url = input('Enter a website to scrape: ')
+print(get_site_text(url))
